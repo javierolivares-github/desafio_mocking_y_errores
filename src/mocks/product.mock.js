@@ -6,6 +6,7 @@ export const generateProductsMocks = (amount) => {
 
   for (let i = 0; i < amount; i++) {
     const product = {
+      _id: faker.database.mongodbObjectId(),
       title: faker.commerce.productName(),
       description: faker.commerce.productDescription(),
       price: faker.commerce.price(),

@@ -46,10 +46,6 @@ router.get("/email", async (req, res) => {
   return res.status(200).json({ status: "ok", msg: "Email enviado" });
 });
 
-router.get("/usersmocks", async (req, res) => {
-  const users = generateUsersMocks(10);
 
-  return res.status(200).json({ status: "ok", users });
-});
 
 export default router;

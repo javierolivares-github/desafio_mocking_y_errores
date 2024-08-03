@@ -1,5 +1,6 @@
 import { userResponseDto } from "../dto/user-response.dto.js";
 import { createToken } from "../utils/jwt.js";
+import { generateUsersMocks } from "../mocks/user.mock.js";
 
 const register = async (req, res) => {
   try {
@@ -54,10 +55,17 @@ const logout = async (req, res) => {
   }
 };
 
+const createUsersMocks = async (req, res) => {
+  const users = generateUsersMocks(10);
+  return res.status(200).json({ status: "ok", users });
+}
+
+
 export default {
   register,
   login,
   current,
   loginGoogle,
   logout,
+  createUsersMocks
 };

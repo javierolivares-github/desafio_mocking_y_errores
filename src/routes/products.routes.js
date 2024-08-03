@@ -5,7 +5,7 @@ import { authorization, passportCall } from "../middlewares/passport.middleware.
 const router = Router();
 router.get("/", productsControllers.getAll);
 
-// router.get("/:pid", productsControllers.getById);
+router.get("/:pid", productsControllers.getById);
 
 router.post("/", passportCall("jwt"), authorization("admin"), productsControllers.create);
 
